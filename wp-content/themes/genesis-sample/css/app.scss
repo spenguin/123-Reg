@@ -1,0 +1,71 @@
+// Variables, Media Queries Defined etc.
+@import "scss-partials/base";
+
+// Sample CSS
+@import "scss-partials/sample";
+
+
+html {
+  &.no-margin {
+    margin: 0 !important;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: white !important;
+  font-family: $font-family !important;
+  overflow-x: hidden;
+  line-height: normal !important;
+
+  // Mobile menu is active
+  &.menu-expanded {
+    overflow: hidden;
+  }
+
+  &.no-margin {
+    margin: 0 !important;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, label, * {
+  font-family: $font-family;
+}
+
+.clear {
+  clear: both;
+}
+
+.row {
+  padding-left: 0;
+  padding-right: 0;
+
+  width: 1154px;
+
+  .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+    float: left;
+  }
+}
+
+
+.nowrap {
+  white-space: nowrap;
+}
+
+
+// HEADER AREA
+@import "scss-partials/header";
+
+// Navigation
+@import "scss-partials/navigation";
+
+// All Sections (most if not all editable in the CMS)
+//@import "scss-partials/sections";
+
+// Footer area
+@import "scss-partials/footer";
+
+// 404 Page Elements
+//@import "scss-partials/404";
+

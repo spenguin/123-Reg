@@ -1,0 +1,51 @@
+@mixin font-face($slug) {
+  // "fonts" folder is located within "css" folder where app.css is placed
+  @font-face {
+    font-family: $slug;
+    src: url( 'fonts/DepotNew-Bold.eot' );
+    src: url( 'fonts/DepotNew-Bold.eot?#iefix' ) format('embedded-opentype'),
+    url('fonts/DepotNew-Bold.woff2') format('woff2'),
+    url('fonts/DepotNew-Bold.woff') format('woff'),
+    url('fonts/DepotNew-Bold.ttf') format('truetype'),
+    url('fonts/DepotNew-Bold.svg#DepotNew-Bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: $slug;
+    src: url('fonts/DepotNew-Light.eot');
+    src: url('fonts/DepotNew-Light.eot?#iefix') format('embedded-opentype'),
+    url('fonts/DepotNew-Light.woff2') format('woff2'),
+    url('fonts/DepotNew-Light.woff') format('woff'),
+    url('fonts/DepotNew-Light.ttf') format('truetype'),
+    url('fonts/DepotNew-Light.svg#DepotNew-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: $slug;
+    src: url('fonts/DepotNew-Regular.eot');
+    src: url('fonts/DepotNew-Regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/DepotNew-Regular.woff2') format('woff2'),
+    url('fonts/DepotNew-Regular.woff') format('woff'),
+    url('fonts/DepotNew-Regular.ttf') format('truetype'),
+    url('fonts/DepotNew-Regular.svg#DepotNew-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: $slug;
+    src: url( 'fonts/font-awesome/FontAwesome.otf');
+    src: url( 'fonts/font-awesome/FontAwesome.otf?#iefix') format('embedded-opentype'),
+    url('fonts/DepotNew-Regular.woff2') format('woff2'),
+    url('fonts/DepotNew-Regular.woff') format('woff'),
+    url('fonts/DepotNew-Regular.ttf') format('truetype'),
+    url('fonts/DepotNew-Regular.svg#DepotNew-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+}

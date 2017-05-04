@@ -1,0 +1,7 @@
+*** FP Foundation Assistant Changelog ***
+
+2016.08.04 - version 1.0.0
+ * Initial release
+
+2016.08.05 - version 1.0.2
+ * Fixed deprecated PHP 4 style constructors
