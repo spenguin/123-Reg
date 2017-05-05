@@ -40,26 +40,38 @@ function init()
 function headerMenuExt( $item_output, $item, $depth, $args ) 
 {	
 	
-	if( 'header-menu-1' == $args->menu->slug )
-	{	
-		if( in_array( 'box-menu', $item->classes ) )
-		{
-			$item_output = str_replace( '</a>', '<span class="box-top">' . $item->description . '</span></a>', $item_output );
-		}
-		if( in_array( 'box-item', $item->classes ) )
-		{
-			
-			if( strpos( $item->description, '[' ) !== FALSE )	// Shortcode exists
+	switch( $args->menu->slug )
+	{ 
+		case 'header-menu-1':
+			if( in_array( 'box-menu', $item->classes ) )
 			{
-				$item_output	= do_shortcode( $item->description );
+				$item_output = str_replace( '</a>', '<span class="box-top">' . $item->description . '</span></a>', $item_output );
 			}
-			else
+			if( in_array( 'box-item', $item->classes ) )
 			{
-				$item_output	= str_replace( '</a>', '<span class="description">' . $item->description . '</span></a>', $item_output );
+				
+				if( strpos( $item->description, '[' ) !== FALSE )	// Shortcode exists
+				{
+					$item_output	= do_shortcode( $item->description );
+				}
+				else
+				{
+					$item_output	= str_replace( '</a>', '<span class="description">' . $item->description . '</span></a>', $item_output );
+				}
+			}		
+
+			break;
+		case 'mobile-menu':
+			if( in_array( 'menu-item-has-children', $item->classes ) )
+			{
+				$item_output	.= '<label for="mobile-menu-child-' . $item->ID . '" class="show-child">></label><input type="checkbox" id="mobile-menu-child-' . $item->ID . '" class="mobile-menu-child" />';
 			}
 
-		}
+		
+
+			break;
 	}
+
 
 	return $item_output;
 }
@@ -94,7 +106,7 @@ function addMobileMenuLink( $items, $args )
 		$post	= strrchr( $mid, '<' );
 		$mid	= substr( $mid, 0, strripos( $mid, '<' ) ); 
 
-		$items	= $pre . '<label for="mobile-menu" class="show">menu <span id="menu-icon-xs" class="menu-icon-xs"></span></label><input type="checkbox" name="mobile-menu" id="mobile-menu" /><span><label for="mobile-menu" class="hide">Close</label>' . $mid . '</span>' . $post;
+		$items	= $pre . '<label for="mobile-menu" class="show">menu <span id="menu-icon-xs" class="menu-icon-xs"></span></label><input type="checkbox" name="mobile-menu" id="mobile-menu" /><span><label for="mobile-menu" class="hide">Close <span class="close-icon"></span></label>' . $mid . '</span>' . $post;
 	}
 
 	return $items;

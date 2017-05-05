@@ -5,16 +5,20 @@
 input[name="mobile-menu"] {
     display: none;
     & ~ span {
-        text-indent: -10000px;
-        transition-duration: 1s;
+        text-indent: -200%;
+//       transition-duration: 1s;
         position: absolute;
         height: 0;
-        overflow: hidden;        
+        overflow: hidden; 
+        width: 100%;  
+        background-color: $color-midblue;     
     }
     &:checked ~ span {
         text-indent: 0;
-        transition-duration: 1s;
-        height: auto;        
+//        transition-duration: 1s;
+        height: auto;  
+        left: 0;
+
     }
 } 
 label[for="mobile-menu"] {
@@ -28,6 +32,26 @@ label[for="mobile-menu"] {
         top: 43px;
         font-size: 22px;
         font-weight: 400;
+        display: none;
+        @include respond-to( xs-screens )  
+        {
+            display: block;
+        }        
+    }
+    &.hide {
+        color: white;
+        text-transform: uppercase; 
+        font-size: 22px;
+        font-weight: 400;    
+        width: 100%;
+        text-align: right;
+        display: none;
+        font-family: $font-family;
+        padding: 20px 20px 0 0;  
+        @include respond-to( xs-screens )  
+        {
+            display: block;
+        }
     }
 }
 
@@ -71,7 +95,7 @@ label[for="mobile-menu"] {
 
 
 #menu-mobile-menu {
-    background-color: $color-midblue;
+    
     @include respond-to-above( xs-screens )
     {
       display: none;
@@ -80,18 +104,62 @@ label[for="mobile-menu"] {
         width: 100%;
         display: block;
         border-bottom: 1px solid white;
+        padding-left: 16px;
         a {
             font-size: 18px;
             color: white;
-            padding: 14px 0 14px 16px;
+            padding: 14px 0 14px 0px;
             font-weight: normal;
             display: block;
         }
-        ul {
-            display: none;
-        }
+        &.menu-item-has-children {
+            position: relative;
+            label {
+                color: white;
+                position: absolute;
+                right: 20px;
+                top: 15px;
+                font-size: 24px;
+                cursor: pointer;
+            }
+            input.mobile-menu-child {
+                display: none;
+                & ~ ul {
+                    position: absolute;
+                    height: 0;
+                    overflow: hidden; 
+                    width: 100%; 
+                    text-indent: -200%;                
+                }
+                &:checked ~ ul {
+                    height: auto;
+                    text-indent: 0;
+                    position: inherit;                
+                }
+            }
+            .sub-menu {
+                width: 100%;
+                margin-bottom: 4px;
+                li {
+                    width: 100%;
+                    padding-left: 0;
+                    background-color: white;
+                    a {
+                        width: 100%;
+                        color: $color-midblue;
+                        background-color: white;
+                        margin-left: 40px;
+                        border-bottom: 2px solid $color-lightblue;
+                    }
+                    &:last-child a {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }        
     }
     &:first-child {
         margin-top: 30px;
     }
+
 }

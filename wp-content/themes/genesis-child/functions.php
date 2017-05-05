@@ -23,7 +23,7 @@ require_once CORE_INC . 'navigation.php';
 require_once CORE_INC . 'shortcodes.php';
 require_once CORE_INC . 'search.php';
 require_once CORE_INC . 'widgets.php';
-require_once CORE_INC . 'classes.php';
+//require_once CORE_INC . 'classes.php';
 
 \Timber::$locations = TWIG_PATH;
 
