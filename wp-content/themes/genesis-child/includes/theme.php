@@ -104,11 +104,18 @@ add_action( 'genesis_loop', '\Theme\new_loop' );
 
 function new_loop()
 {
-	$context	= \Timber::get_context(); 
+	$context	= \Timber::get_context();
 
 	$context['posts']	= \Timber::get_posts();
 
-	\Timber::render( 'loop.twig', $context );
+	if( FALSE !== strpos( $context['body_class'], 'single-post' ) )
+	{
+		\Timber::render( 'single.twig', $context );
+	}
+	else
+	{
+		\Timber::render( 'loop.twig', $context );
+	}
 
 }
 

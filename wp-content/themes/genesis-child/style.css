@@ -4498,4 +4498,70 @@ footer {
     clear: both;
     line-height: 12px; }
 
+/**
+	Single post styles 
+*/
+.single-post article h1 a {
+  color: #0093d1;
+  font-size: 36px;
+  font-weight: normal;
+  text-decoration: none;
+  margin-bottom: 0; }
+  @media only screen and (max-width: 767px) {
+    .single-post article h1 a {
+      font-size: 24px;
+      padding-bottom: 14px; } }
+.single-post article .sp-wrapper {
+  float: left;
+  padding-bottom: 28px;
+  border-bottom: 1px dotted #7f7f7f;
+  margin-bottom: 28px; }
+  .single-post article .sp-wrapper img {
+    float: left;
+    margin-right: 7%;
+    width: 17%; }
+    @media only screen and (max-width: 767px) {
+      .single-post article .sp-wrapper img {
+        width: 23%;
+        margin-right: 6%;
+        max-width: 60px; } }
+    @media only screen and (min-width: 992px) {
+      .single-post article .sp-wrapper img {
+        width: 22%;
+        margin-right: 3.5%; } }
+    @media only screen and (min-width: 1200px) {
+      .single-post article .sp-wrapper img {
+        width: 19%;
+        max-width: 120px;
+        margin-right: 3.2%; } }
+  .single-post article .sp-wrapper .text {
+    float: left;
+    font-size: 18px;
+    color: #7f7f7f; }
+    @media only screen and (max-width: 767px) {
+      .single-post article .sp-wrapper .text {
+        font-size: 14px; } }
+    .single-post article .sp-wrapper .text.no-thumbnail {
+      width: 100%; }
+    .single-post article .sp-wrapper .text h3 {
+      margin-bottom: 11px; }
+      .single-post article .sp-wrapper .text h3 a {
+        color: #0093d1;
+        text-decoration: none;
+        font-size: 20px;
+        margin-bottom: 9px;
+        font-weight: normal; }
+        .single-post article .sp-wrapper .text h3 a:hover {
+          color: #0093d1; }
+    .single-post article .sp-wrapper .text p.credit {
+      font-size: 14px;
+      margin-bottom: 0;
+      line-height: 21px; }
+      @media only screen and (max-width: 767px) {
+        .single-post article .sp-wrapper .text p.credit {
+          font-size: 13px; } }
+    .single-post article .sp-wrapper .text h4 {
+      font-size: 18px;
+      font-weight: normal; }
+
 /*# sourceMappingURL=style.css.map */
