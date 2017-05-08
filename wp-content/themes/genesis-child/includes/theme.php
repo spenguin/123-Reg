@@ -74,27 +74,6 @@ function after_content()
 
 
 /**
-	Add class to <main>
-*/
-//add_action( 'genesis_before_content', '\Theme\content_before_content' );
-//add_action( 'genesis_after_content', '\Theme\content_after_content' );
-
-
-function content_before_content()
-{
-	$context	= array();
-
-	\Timber::render( 'content_before_content.twig', $context );
-}
-
-function content_after_content()
-{
-	\Timber::render_string( '</div>' );
-}
-
-
-
-/**
 	Modify the loop
 */
 

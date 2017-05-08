@@ -17,6 +17,9 @@ function init()
 
 	// Register Mobile Menu Menu link
 	add_filter( 'wp_nav_menu','\Navigation\addMobileMenuLink',10,2 );
+
+	// Add Pagination after loop
+	add_action( 'genesis_after_loop', '\Navigation\addPagination' );
 }
 
 
@@ -111,3 +114,15 @@ function addMobileMenuLink( $items, $args )
 
 	return $items;
 }
+
+
+/**
+	Insert code into Hook genesis_after_content
+*/
+function addPagination()
+{
+	$context	= array();
+
+	\Timber::render( 'pagination_after_content.twig', $context );
+}
+

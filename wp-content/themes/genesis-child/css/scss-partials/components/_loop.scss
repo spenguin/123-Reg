@@ -12,7 +12,6 @@
 		}
 	}
 	article {
-/*		height: 148px;*/
 		&.featured-post {
 			.fp-wrapper {
 				float: left;
@@ -84,7 +83,10 @@
 			}		
 		}
 	}
-	&:last-child {
-		border-bottom: none;
+
+}
+main article {
+	&:nth-child(7) .fp-wrapper {
+		border-bottom: none!important;
 	}
 }
