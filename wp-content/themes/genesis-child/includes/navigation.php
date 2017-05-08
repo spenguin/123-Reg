@@ -64,7 +64,7 @@ function headerMenuExt( $item_output, $item, $depth, $args )
 		case 'mobile-menu':
 			if( in_array( 'menu-item-has-children', $item->classes ) )
 			{
-				$item_output	.= '<label for="mobile-menu-child-' . $item->ID . '" class="show-child">></label><input type="checkbox" id="mobile-menu-child-' . $item->ID . '" class="mobile-menu-child" />';
+				$item_output	.= '<input type="checkbox" id="mobile-menu-child-' . $item->ID . '" class="mobile-menu-child" /><label for="mobile-menu-child-' . $item->ID . '" class="show-child"></label>';
 			}
 
 		
