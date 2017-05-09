@@ -2654,7 +2654,9 @@ body > div {
 body {
   background-color: #fff;
   color: #333;
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  /**  [JSA:09/05/17] - Removed  
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  */
   font-size: 18px;
   font-size: 1.8rem;
   font-weight: 400;
@@ -2734,7 +2736,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  /** [JSA:09/05/17] - Removed
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  */
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 10px; }
@@ -4119,6 +4123,25 @@ ul.pagination li {
     border-color: #7f7f7f; }
 
 /**
+	Single Post styling
+*/
+.prevnext-navigation .single-navlink {
+  width: 49%;
+  float: left;
+  text-align: left; }
+  .prevnext-navigation .single-navlink.text-right {
+    float: right;
+    text-align: right;
+    text-decoration: none; }
+  .prevnext-navigation .single-navlink a {
+    padding: 8px;
+    border: 1px solid #0269a0;
+    color: #0269a0; }
+    .prevnext-navigation .single-navlink a:hover {
+      background-color: #0269a0;
+      color: white; }
+
+/**
 	Component style code for the header
 */
 .site-description {
@@ -4180,7 +4203,8 @@ ul.pagination li {
 footer {
   background-color: #0093d1;
   color: white;
-  padding-top: 26px !important; }
+  padding-top: 26px !important;
+  margin-top: 40px; }
   footer .wrap {
     padding-left: 65px;
     padding-right: 60px;
@@ -4559,7 +4583,6 @@ main article:nth-child(7) .fp-wrapper {
 .single-post article .sp-wrapper {
   float: left;
   padding-bottom: 28px;
-  border-bottom: 1px dotted #7f7f7f;
   margin-bottom: 28px; }
   .single-post article .sp-wrapper img {
     float: left;

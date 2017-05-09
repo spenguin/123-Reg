@@ -121,8 +121,16 @@ function addMobileMenuLink( $items, $args )
 */
 function addPagination()
 {
-	$context	= array();
+	$context = \Timber::get_context();
 
-	\Timber::render( 'pagination_after_content.twig', $context );
+	switch( $context['body_class'] )
+	{
+		case ( FALSE !== strpos( $context['body_class'], 'single-post' ) ):
+			\Timber::render( 'single-post-pagination-after-content.twig', $context );
+			break;
+		case ( FALSE !== strpos( $context['body_class'], 'home' ) ):
+			\Timber::render( 'pagination-after-content.twig', $context );
+			break;		
+	} 
 }
 

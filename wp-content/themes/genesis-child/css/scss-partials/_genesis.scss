@@ -131,7 +131,9 @@ body > div {
 body {
   background-color: #fff;
   color: #333;
+/**  [JSA:09/05/17] - Removed  
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+*/
   font-size: 18px;
   font-size: 1.8rem;
   font-weight: 400;
@@ -225,7 +227,9 @@ h3,
 h4,
 h5,
 h6 {
+/** [JSA:09/05/17] - Removed
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+*/
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 10px;
